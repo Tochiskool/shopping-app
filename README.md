@@ -1,5 +1,7 @@
 # A react shopping application
 
+## Step1 create react app locally
+
 Project Development workflow
 Create google spreadsheet
 Add columns feature, description, state and duration
