@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Grandstander:wght@200&display=swap");
+
 html {
    font-size: 62.5%;
    box-sizing: border-box;
@@ -20,10 +22,15 @@ body,
 /*Base Css*/
 body,
 input,
+button,
 select,
 textarea {
+   font-family: Grandstander, Arial, Helvetica, sans-serif;
    font-size: 1.6rem;
-   font-family: Arial, Helvetica, sans-serif;
+}
+a {
+   text-decoration: none;
+   font-weight: bolder;
 }
 a:hover {
    color: #ff8000;
@@ -44,7 +51,7 @@ header a {
 /*Main Area*/
 main {
    grid-area: main;
-   background-color: #203040;
+   background-color: #ffffff;
 }
 /*Footer area*/
 
@@ -54,4 +61,69 @@ footer {
    display: flex;
    justify-content: center;
    align-items: center;
+}
+
+/*Modules*/
+/*Base Module*/
+.content {
+   display: flex;
+   flex-wrap: wrap;
+}
+.main {
+   flex: 3 60rem;
+}
+.sidebar {
+   flex: 1 20rem;
+}
+
+/*Products Module*/
+
+.products {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+   padding: 0;
+   margin: 0;
+   list-style-type: none;
+}
+.products li {
+   flex: 0 1 29rem;
+   height: 47rem;
+   padding: 1rem;
+}
+.product {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   height: 100%;
+}
+.product img {
+   max-width: 37rem;
+   max-height: 37rem;
+}
+.product-price {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+.product-price div,
+.product-price button {
+   text-align: center;
+   flex: 1;
+}
+.product-price div {
+   font-size: 2rem;
+}
+.button {
+   padding: 1rem;
+   border: 0.1rem #c0c0c0 solid;
+   background-color: #f0f0f0;
+   cursor: pointer;
+}
+.button:hover {
+   border: 0.1rem #808080 solid;
+}
+.button-primary {
+   background-color: #f0c040;
 }
