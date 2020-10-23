@@ -18,7 +18,7 @@ class App extends React.Component{
   }
 
   createOrder = (order) => {
-    alert("Name  of customer " + order.email)
+    alert("Name  of customer " + order.name)
     console.log(order.name)
   }
   removeFromCart = (product) => {

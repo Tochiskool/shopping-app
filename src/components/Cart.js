@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import formatCurrency from '../util';
+import Fade from "react-reveal/Fade";
 
 class Cart extends Component {
   constructor(props) {
@@ -37,7 +38,8 @@ class Cart extends Component {
         {cartItems.length === 0 ? <div className="cart cart-header">Cart is Empty</div>
           : <div className="cart cart-header">You have {cartItems.length} in your cart</div>}
       </div>
-      <div className="cart">
+        <div className="cart">
+          <Fade left cascade>
           <ul className="cart-items">
             {cartItems.map((item) => {
               return <li key={item._id}>
@@ -56,7 +58,8 @@ class Cart extends Component {
                 </div>
               </li>
             })}
-        </ul>
+            </ul>
+            </Fade>
         </div>
         {cartItems.length !== 0 && (
           <div className="cart">
@@ -73,22 +76,15 @@ class Cart extends Component {
             }} className=" button button-primary">Proceed</button>
             </div>
             <div>
+              <Fade right cascade>
             {this.state.showCheckout && (
                 <div className="cart">
                   <form onSubmit={this.createOrder}>
                       <ul className="form-container">
-                        <li>
-                          <label>Email</label>
+                      <li>
+                          <label htmlFor="name">Name</label>
                           <input
-                            name="email"
-                            type="email"
-                            required
-                            onChange={this.handleInput}
-                          ></input>
-                        </li>
-                        <li>
-                          <label>Name</label>
-                          <input
+                            id="name"
                             name="name"
                             type="text"
                             required
@@ -96,8 +92,19 @@ class Cart extends Component {
                           ></input>
                         </li>
                         <li>
-                          <label>Address</label>
+                          <label htmlFor="email">Email</label>
                           <input
+                            id="email"
+                            name="email"
+                            type="email"
+                            required
+                            onChange={this.handleInput}
+                          ></input>
+                        </li>
+                        <li>
+                          <label htmlFor="address">Address</label>
+                          <input
+                            id="address"
                             name="address"
                             type="text"
                             required
@@ -112,7 +119,8 @@ class Cart extends Component {
                       </ul>
                     </form>              
          </div>
-         )}
+                )}
+                </Fade>
         </div>
           </div>
         )}
