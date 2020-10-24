@@ -43,3 +43,22 @@ Show modal if product exist
 Create modal
 Create zoom effect for modal
 index css
+
+# Backend
+
+## Create Products backend
+
+Install nodemon globally
+Add server.js
+install express body-parser mongoose shortid
+install MongoDB
+app = express()
+app.use(bodyParser.json())
+mongoose.connect()
+create product model
+app.post('/api.products')
+Postman send post request
+route.get("api/products")
+route.delete("api/products/:id")
+
+## Add Redux
